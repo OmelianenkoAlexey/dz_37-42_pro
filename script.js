@@ -16,27 +16,46 @@ const fiveSmile = document.querySelector(".fiveSmile");
 
 const firstNumber = document.querySelector(".firstNumber");
 const secondNumber = document.querySelector(".secondNumber");
+const thirdNumber = document.querySelector(".thirdNumber");
+const fourNumber = document.querySelector(".fourNumber");
+const fiveNumber = document.querySelector(".fiveNumber");
 
-
-let firstBall = 55;
+let firstBall = 25;
 let secondBall = 15;
-// let firstBall = 55;
-// let firstBall = 55;
-// let firstBall = 55;
+let thirdBall = 10;
+let fourBall = 15;
+let fiveBall = 25;
 
 firstNumber.innerText = `${firstBall}`;
 secondNumber.innerText = `${secondBall}`;
+thirdNumber.innerText = `${thirdBall}`;
+fourNumber.innerText = `${fourBall}`;
+fiveNumber.innerText = `${fiveBall}`;
 
-let data = 0;
 firstSmile.addEventListener("click", e => {
     firstBall += 1;
     firstNumber.innerText = `${firstBall}`;
-})
+});
 
 secondSmile.addEventListener("click", e => {
     secondBall += 1;
     secondNumber.innerText = `${secondBall}`;
-})
+});
+
+thirdSmile.addEventListener("click", e => {
+    thirdBall += 1;
+    thirdNumber.innerText = `${thirdBall}`;
+});
+
+fourSmile.addEventListener("click", e => {
+    fourBall += 1;
+    fourNumber.innerText = `${fourBall}`;
+});
+
+fiveSmile.addEventListener("click", e => {
+    fiveBall += 1;
+    fiveNumber.innerText = `${fiveBall}`;
+});
 
 
 // ! ДЗ 38. Реалізувати подобу інтернет - магазину.

@@ -103,12 +103,48 @@
     <li>3</li>
 </ul> */
 // !!!!!!!!!!!!!!!!!!
-// const arrayNumber = [1, 2, 3];
+
+const arrayNumber = [1, 2, [1, 2, 3], 3];
+
+function generateList(array) {
+    const ul = document.createElement("ul");
+
+    array.forEach((i) => {
+
+        const li = document.createElement("li");
+        li.innerText = i;
+
+        if (i === 3) {
+            const liSecond = document.createElement("li");
+            const ulSecond = document.createElement("ul");
+
+            array.forEach((i) => {
+                const liThird = document.createElement("li");
+                liThird.innerText = `1.${i}`;
+                ulSecond.append(liThird);
+            })
+
+
+            liSecond.append(ulSecond);
+            ul.append(liSecond);
+        }
+        ul.append(li);
+    })
+    document.body.append(ul);
+};
+generateList(arrayNumber);
+
+
+// !!!!!!!!!!!!!!!!!!!!!!
+
+
+// const arrayNumber = [1, 2, [1, 2, 3], 3];
 
 // function generateList(array) {
 //     const ul = document.createElement("ul");
 
 //     array.forEach((i) => {
+        
 //         const li = document.createElement("li");
 //         li.innerText = i;
 
@@ -166,63 +202,63 @@
 
 // За натисканням на кнопку замість форми повинна виводитися “таблиця” з даними, які ввів користувач.
 
-const form = document.getElementById("form");
+// const form = document.getElementById("form");
 
-const firstName = document.getElementById("firstName");
-const secondName = document.getElementById("secondName");
-const dateOfBirth = document.getElementById("dateOfBirth");
+// const firstName = document.getElementById("firstName");
+// const secondName = document.getElementById("secondName");
+// const dateOfBirth = document.getElementById("dateOfBirth");
 
-const sex = document.getElementById("sex");
-const man = document.getElementById("man");
-const woman = document.getElementById("woman");
+// const sex = document.getElementById("sex");
+// const man = document.getElementById("man");
+// const woman = document.getElementById("woman");
 
-const city = document.getElementById("city");
-const address = document.getElementById("address");
+// const city = document.getElementById("city");
+// const address = document.getElementById("address");
 
-const langUk = document.getElementById("langUk");
-const langRu = document.getElementById("langRu");
-const langEn = document.getElementById("langEn");
+// const langUk = document.getElementById("langUk");
+// const langRu = document.getElementById("langRu");
+// const langEn = document.getElementById("langEn");
 
-const button = document.getElementById("button");
+// const button = document.getElementById("button");
 
-const boxInfo = document.getElementById("box-info");
-const add = document.getElementById("add");
-const close = document.getElementById("close");
+// const boxInfo = document.getElementById("box-info");
+// const add = document.getElementById("add");
+// const close = document.getElementById("close");
 
-function toggleElement() {
-    const modal = document.querySelector(".modal-container");
-    modal.classList.toggle("d-none");
-    form.classList.toggle("d-none");
-}
+// function toggleElement() {
+//     const modal = document.querySelector(".modal-container");
+//     modal.classList.toggle("d-none");
+//     form.classList.toggle("d-none");
+// }
 
-button.addEventListener("click", e => {
-    e.preventDefault();
-    toggleElement()
+// button.addEventListener("click", e => {
+//     e.preventDefault();
+//     toggleElement()
 
-    document.getElementById("firstNameForm").innerText = firstName.value;
-    document.getElementById("secondNameForm").innerText = secondName.value;
-    document.getElementById("dateOfBirthForm").innerText = dateOfBirth.value;
-    document.getElementById("cityForm").innerText = city.value;
-    document.getElementById("addressForm").innerText = address.value;
+//     document.getElementById("firstNameForm").innerText = firstName.value;
+//     document.getElementById("secondNameForm").innerText = secondName.value;
+//     document.getElementById("dateOfBirthForm").innerText = dateOfBirth.value;
+//     document.getElementById("cityForm").innerText = city.value;
+//     document.getElementById("addressForm").innerText = address.value;
 
-    const sexForm = document.getElementById("sexForm");
-    if (man.checked) sexForm.innerText = man.value;
-    if (woman.checked) sexForm.innerText = woman.value;
+//     const sexForm = document.getElementById("sexForm");
+//     if (man.checked) sexForm.innerText = man.value;
+//     if (woman.checked) sexForm.innerText = woman.value;
 
-    const data = [];
-    if (langUk.checked) data.push(langUk.value);
-    if (langRu.checked) data.push(langRu.value);
-    if (langEn.checked) data.push(langEn.value);
-    document.getElementById("langUkForm").innerText = data.join(", ");
-});
+//     const data = [];
+//     if (langUk.checked) data.push(langUk.value);
+//     if (langRu.checked) data.push(langRu.value);
+//     if (langEn.checked) data.push(langEn.value);
+//     document.getElementById("langUkForm").innerText = data.join(", ");
+// });
 
-add.addEventListener("click", e => {
-    toggleElement()
-});
+// add.addEventListener("click", e => {
+//     toggleElement()
+// });
 
-close.addEventListener("click", e => {
-    toggleElement()
-});
+// close.addEventListener("click", e => {
+//     toggleElement()
+// });
 
 
 
